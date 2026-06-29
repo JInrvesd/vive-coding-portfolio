@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>강현우 — 기술경영 컨설턴트</title>
+  <meta name="description" content="기업의 기술을 사업 성과로 잇는 기술경영 컨설턴트. 기술 사업화, R&D 전략, 기술가치평가, 기술 기반 투자유치를 설계합니다." />
+
+  <!-- Tailwind CSS (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              900: '#0b2545',
+              800: '#13325b',
+              700: '#1c4e8a',
+            },
+            sky: {
+              100: '#eaf1fb',
+              200: '#d4e4f7',
+              300: '#b9d4f0',
+            },
+          },
+          fontFamily: {
+            sans: ['Pretendard', 'Poppins', 'system-ui', 'sans-serif'],
+            script: ['"Dancing Script"', 'cursive'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Dancing+Script:wght@600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="font-sans text-brand-900 bg-white antialiased">
+  <!-- ===== Header / Nav ===== -->
+  <header id="site-header" class="sticky top-0 z-50 bg-white/90 backdrop-blur transition-shadow">
+    <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <a href="#top" class="flex items-center gap-2 font-extrabold leading-tight text-brand-900">
+        <span class="grid grid-cols-2 gap-0.5" aria-hidden="true">
+          <span class="h-2 w-2 rounded-sm bg-sky-300"></span>
+          <span class="h-2 w-2 rounded-sm bg-brand-800"></span>
+          <span class="h-2 w-2 rounded-sm bg-brand-800"></span>
+          <span class="h-2 w-2 rounded-sm bg-sky-300"></span>
+        </span>
+        <span class="text-lg">강현우<br />기술경영</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <ul class="hidden items-center gap-8 text-base font-medium md:flex">
+        <li><a href="#cases" class="hover:text-brand-700">컨설팅 사례</a></li>
+        <li><a href="#about" class="hover:text-brand-700">소개</a></li>
+        <li><a href="#contact" class="hover:text-brand-700">문의</a></li>
+      </ul>
+
+      <!-- Mobile menu button -->
+      <button
+        id="menu-toggle"
+        class="inline-flex h-11 w-11 items-center justify-center rounded-lg text-brand-900 md:hidden"
+        aria-label="메뉴 열기"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden border-t border-sky-100 bg-white md:hidden">
+      <ul class="flex flex-col gap-1 px-6 py-4 text-lg font-medium">
+        <li><a href="#cases" class="block rounded-lg px-3 py-3 hover:bg-sky-100">컨설팅 사례</a></li>
+        <li><a href="#about" class="block rounded-lg px-3 py-3 hover:bg-sky-100">소개</a></li>
+        <li><a href="#contact" class="block rounded-lg px-3 py-3 hover:bg-sky-100">문의</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ===== Hero ===== -->
+    <section class="mx-auto max-w-5xl px-6 pt-16 pb-12 text-center sm:pt-24">
+      <h1 class="text-4xl font-extrabold leading-tight tracking-tight text-brand-900 sm:text-5xl md:text-6xl">
+        기술을 사업으로 잇는
+        <span class="mx-1 inline-flex h-12 w-12 translate-y-1 items-center justify-center rounded-full bg-sky-200 align-middle text-brand-800 sm:h-16 sm:w-16" aria-hidden="true">
+          <svg class="h-6 w-6 sm:h-8 sm:w-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 17l6-6 4 4 8-8" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14 7h7v7" />
+          </svg>
+        </span>
+        <br class="hidden sm:block" />
+        기술경영 컨설턴트
+      </h1>
+      <p class="mx-auto mt-6 max-w-2xl text-lg text-gray-500 sm:text-xl">
+        기술 사업화 · R&D 전략 · 기술가치평가 · 기술 기반 투자유치까지<br class="hidden sm:block" />
+        기업의 기술 자산을 실제 성과로 연결합니다
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <a href="#cases" class="rounded-full bg-brand-900 px-7 py-4 font-semibold text-white transition hover:bg-brand-800">컨설팅 사례 보기</a>
+        <a href="#contact" class="rounded-full border border-brand-900 px-7 py-4 font-semibold text-brand-900 transition hover:bg-sky-100">상담 문의</a>
+      </div>
+    </section>
+
+    <!-- ===== Stats ===== -->
+    <section class="mx-auto max-w-5xl px-6 pb-8">
+      <div class="grid grid-cols-2 gap-4 rounded-3xl bg-sky-100 p-6 sm:grid-cols-4 sm:p-8">
+        <div class="text-center">
+          <p class="text-3xl font-extrabold text-brand-800 sm:text-4xl">5+</p>
+          <p class="mt-1 text-sm text-gray-500">기술경영 컨설팅 사례</p>
+        </div>
+        <div class="text-center">
+          <p class="text-3xl font-extrabold text-brand-800 sm:text-4xl">기술 사업화</p>
+          <p class="mt-1 text-sm text-gray-500">특허·R&D 전략 설계</p>
+        </div>
+        <div class="text-center">
+          <p class="text-3xl font-extrabold text-brand-800 sm:text-4xl">기술가치평가</p>
+          <p class="mt-1 text-sm text-gray-500">투자 논리 재설계</p>
+        </div>
+        <div class="text-center">
+          <p class="text-3xl font-extrabold text-brand-800 sm:text-4xl">2년+</p>
+          <p class="mt-1 text-sm text-gray-500">R&D 체계 정착 관리</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Case Studies ===== -->
+    <section id="cases" class="mx-auto max-w-6xl px-6 py-12">
+      <h2 class="mb-8 text-3xl font-bold text-gray-800 sm:text-4xl">컨설팅 사례</h2>
+
+      <div class="space-y-8">
+        <!-- Case 01 -->
+        <article class="rounded-3xl bg-sky-200/70 p-3 sm:p-5">
+          <div class="grid gap-6 rounded-2xl bg-white p-5 sm:p-8 md:grid-cols-2 md:items-center">
+            <div class="overflow-hidden rounded-xl bg-gray-100">
+              <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80" alt="제조 기술 현장" class="h-full w-full object-cover" loading="lazy" />
+            </div>
+            <div>
+              <div class="mb-4 flex items-center gap-2 text-lg font-bold text-brand-700">
+                <span class="text-2xl" aria-hidden="true">🏭</span> Case 01 · 기술 사업화
+              </div>
+              <h3 class="text-2xl font-bold leading-snug text-gray-900 sm:text-3xl">
+                특허 포트폴리오 분석으로 제조 기업의 기술 경쟁력 설계
+              </h3>
+              <p class="mt-4 text-gray-500">
+                개별 특허 3건을 나열하는 대신 특허 간 시너지 구조를 분석해 모방하기 어려운 기술적 해자를 도출했습니다.
+                기술 차별성을 사업화 전략으로 연결해 정책자금 유치 → 공장 설립 → 제품 생산까지 이어졌습니다.
+              </p>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="rounded-full border border-gray-300 px-4 py-1.5 text-sm">기술 사업화</span>
+                <span class="rounded-full border border-gray-300 px-4 py-1.5 text-sm">특허 전략</span>
+                <span class="rounded-full border border-gray-300 px-4 py-1.5 text-sm">제조업</span>
+              </div>
+              <a href="https://app.notion.com/p/33695af9efd78114a54ef117df7666a8" target="_blank" rel="noopener" class="mt-6 flex items-center justify-between rounded-full bg-brand-900 px-6 py-4 text-white transition hover:bg-brand-800">
+                <span class="font-semibold">자세히 보기</span>
+                <span class="grid h-9 w-9 place-items-center rounded-full border border-white/40">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Case 02 -->
+        <article class="rounded-3xl bg-sky-200/70 p-3 sm:p-5">
+          <div class="grid gap-6 rounded-2xl bg-white p-5 sm:p-8 md:grid-cols-2 md:items-center">
+            <div class="overflow-hidden rounded-xl bg-gray-100">
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="기술 전략 회의" class="h-full w-full object-cover" loading="lazy" />
+            </div>
+            <div>
+              <div class="mb-4 flex items-center gap-2 text-lg font-bold text-brand-700">
+                <span class="text-2xl" aria-hidden="true">📈</span> Case 02 · 기술 도입 전략
+              </div>
+              <h3 class="text-2xl font-bold leading-snug text-gray-900 sm:text-3xl">
+                기술 역량 없던 서비스 기업의 기술기업 전환
+              </h3>
+              <p class="mt-4 text-gray-500">
+                기술 개발 이력이 없던 회사에 시장·기술 동향 분석을 토대로 적합한 기술을 제안하고, 비전공 경영진도 이해할
+                수 있도록 사업화 시나리오를 설계했습니다. 연구소 설립과 특허 출원으로 이어지며 기술기업으로 전환했습니다.
+              </p>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="rounded-full border border-gray-300 px-4 py-1.5 text-sm">기술 전략</span>
+                <span class="rounded-full border border-gray-300 px-4 py-1.5 text-sm">기술 도입</span>
+                <span class="rounded-full border border-gray-300 px-4 py-1.5 text-sm">R&D 조직</span>
+              </div>
+              <a href="https://app.notion.com/p/33695af9efd781c1b313ce81ea23461f" target="_blank" rel="noopener" class="mt-6 flex items-center justify-between rounded-full bg-brand-900 px-6 py-4 text-white transition hover:bg-brand-800">
+                <span class="font-semibold">자세히 보기</span>
+                <span class="grid h-9 w-9 place-items-center rounded-full border border-white/40">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Case 03 -->
+        <article class="rounded-3xl bg-sky-200/70 p-3 sm:p-5">
+          <div class="grid gap-6 rounded-2xl bg-white p-5 sm:p-8 md:grid-cols-2 md:items-center">
+            <div class="overflow-hidden rounded-xl bg-gray-100">
+              <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=800&q=80" alt="엔지니어링 R&D" class="h-full w-full object-cover" loading="lazy" />
+            </div>
+            <div>
+              <div class="mb-4 flex items-center gap-2 text-lg font-bold text-brand-700">
+                <span class="text-2xl" aria-hidden="true">🛠️</span> Case 03 · R&D 체계화
+              </div>
+              <h3 class="text-2xl font-bold leading-snug text-gray-900 sm:text-3xl">
+                엔지니어링 기업의 R&D 조직 정비와 기술사업화 로드맵 재설계
+              </h3>
+              <p class="mt-4 text-gray-500">
+                방치된 등록 특허를 사업화 계획에 반영하고, R&D 조직 관리 체계와 기술개발 성과 측정 기준을 새로
+                수립했습니다. 흩어져 있던 기술 자산을 3년 기술 로드맵으로 통합해 기술 경영 역량을 끌어올렸습니다.
+              </p>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="rounded-full border border-gray-300 px-4 py-1.5 text-sm">R&D 관리</span>
+                <span class="rounded-full border border-gray-300 px-4 py-1.5 text-sm">기술 로드맵</span>
+                <span class="rounded-full border border-gray-300 px-4 py-1.5 text-sm">엔지니어링</span>
+              </div>
+              <a href="https://app.notion.com/p/33695af9efd781e09938f8e6b147d7e1" target="_blank" rel="noopener" class="mt-6 flex items-center justify-between rounded-full bg-brand-900 px-6 py-4 text-white transition hover:bg-brand-800">
+                <span class="font-semibold">자세히 보기</span>
+                <span class="grid h-9 w-9 place-items-center rounded-full border border-white/40">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Case 04 -->
+        <article class="rounded-3xl bg-sky-200/70 p-3 sm:p-5">
+          <div class="grid gap-6 rounded-2xl bg-white p-5 sm:p-8 md:grid-cols-2 md:items-center">
+            <div class="overflow-hidden rounded-xl bg-gray-100">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="기술가치평가 지표" class="h-full w-full object-cover" loading="lazy" />
+            </div>
+            <div>
+              <div class="mb-4 flex items-center gap-2 text-lg font-bold text-brand-700">
+                <span class="text-2xl" aria-hidden="true">💡</span> Case 04 · 기술가치평가
+              </div>
+              <h3 class="text-2xl font-bold leading-snug text-gray-900 sm:text-3xl">
+                AI 소프트웨어 기업의 기술 기반 투자 논리 재설계
+              </h3>
+              <p class="mt-4 text-gray-500">
+                초기 기업에 부적합한 DCF 평가 대신 기술 완성도·팀 역량·시장 검증을 반영한 Milestone + ScoreCard 방식으로
+                전환했습니다. 기술개발 마일스톤과 KPI를 정의해 투자자가 납득하는 기술 기반 IR 논리를 완성했습니다.
+              </p>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="rounded-full border border-gray-300 px-4 py-1.5 text-sm">기술가치평가</span>
+                <span class="rounded-full border border-gray-300 px-4 py-1.5 text-sm">기술 마일스톤</span>
+                <span class="rounded-full border border-gray-300 px-4 py-1.5 text-sm">투자유치</span>
+              </div>
+              <a href="https://app.notion.com/p/33695af9efd78100aa2ef11cd587d1f7" target="_blank" rel="noopener" class="mt-6 flex items-center justify-between rounded-full bg-brand-900 px-6 py-4 text-white transition hover:bg-brand-800">
+                <span class="font-semibold">자세히 보기</span>
+                <span class="grid h-9 w-9 place-items-center rounded-full border border-white/40">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Case 05 -->
+        <article class="rounded-3xl bg-sky-200/70 p-3 sm:p-5">
+          <div class="grid gap-6 rounded-2xl bg-white p-5 sm:p-8 md:grid-cols-2 md:items-center">
+            <div class="overflow-hidden rounded-xl bg-gray-100">
+              <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80" alt="연구개발 인프라" class="h-full w-full object-cover" loading="lazy" />
+            </div>
+            <div>
+              <div class="mb-4 flex items-center gap-2 text-lg font-bold text-brand-700">
+                <span class="text-2xl" aria-hidden="true">🔬</span> Case 05 · R&D 인프라
+              </div>
+              <h3 class="text-2xl font-bold leading-snug text-gray-900 sm:text-3xl">
+                AI 플랫폼 기업의 R&D 체계 구축과 2년의 기술경영
+              </h3>
+              <p class="mt-4 text-gray-500">
+                연구 인력·공간 진단부터 지속 가능한 연구주제 선정, 연구노트·보고서 운영까지 설계해 형식적이지 않은
+                R&D 체계를 정착시켰습니다. 2년 이상 실질적 연구활동이 이어지며 특허 출원 등 후속 성과로 연결됐습니다.
+              </p>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="rounded-full border border-gray-300 px-4 py-1.5 text-sm">R&D 인프라</span>
+                <span class="rounded-full border border-gray-300 px-4 py-1.5 text-sm">기술경영 체계</span>
+                <span class="rounded-full border border-gray-300 px-4 py-1.5 text-sm">사후관리</span>
+              </div>
+              <a href="https://app.notion.com/p/33695af9efd7817baa7ae1ea7d00b7f2" target="_blank" rel="noopener" class="mt-6 flex items-center justify-between rounded-full bg-brand-900 px-6 py-4 text-white transition hover:bg-brand-800">
+                <span class="font-semibold">자세히 보기</span>
+                <span class="grid h-9 w-9 place-items-center rounded-full border border-white/40">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== About Me ===== -->
+    <section id="about" class="mx-auto max-w-6xl px-6 py-12">
+      <h2 class="mb-8 text-3xl font-bold text-gray-800 sm:text-4xl">소개</h2>
+
+      <div class="rounded-3xl bg-sky-200/70 p-3 sm:p-5">
+        <div class="grid gap-6 md:grid-cols-2 md:items-stretch">
+          <!-- 인물 사진 대신 전문 영역 카드 -->
+          <div class="flex flex-col justify-between gap-6 rounded-2xl bg-brand-900 p-7 text-white sm:p-9">
+            <div>
+              <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white/10" aria-hidden="true">
+                <svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 17l6-6 4 4 8-8" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M14 7h7v7" />
+                </svg>
+              </span>
+              <p class="mt-5 text-xl font-bold">전문 영역</p>
+            </div>
+            <ul class="space-y-3 text-sky-200">
+              <li class="flex items-center gap-3"><span class="h-1.5 w-1.5 rounded-full bg-sky-300"></span> 기술 사업화 전략 설계</li>
+              <li class="flex items-center gap-3"><span class="h-1.5 w-1.5 rounded-full bg-sky-300"></span> R&D 조직·인프라 체계화</li>
+              <li class="flex items-center gap-3"><span class="h-1.5 w-1.5 rounded-full bg-sky-300"></span> 기술가치평가 및 투자 논리</li>
+              <li class="flex items-center gap-3"><span class="h-1.5 w-1.5 rounded-full bg-sky-300"></span> 특허·기술 자산 활용 전략</li>
+            </ul>
+          </div>
+
+          <div class="flex flex-col justify-between gap-6">
+            <div class="rounded-2xl bg-white p-6 sm:p-8">
+              <h3 class="text-2xl font-bold text-gray-900 sm:text-3xl">안녕하세요, 강현우입니다 👋</h3>
+              <p class="mt-4 text-gray-600">
+                저는 <strong class="italic text-gray-800">"이 기술이 실제로 어떤 사업 성과로 이어지는가?"</strong>를
+                먼저 묻는 기술경영 컨설턴트입니다. 기술 동향 조사, 기술 제안, 사업화 전략 설계, R&D 체계 구축까지
+                수행하며 기업의 기술 자산을 <strong class="text-gray-800">실질적인 성장 동력</strong>으로 연결합니다.
+              </p>
+              <p class="mt-4 text-gray-600">
+                기술 사업화, R&D 전략, 기술가치평가, 기술 기반 투자유치를 한 흐름으로 설계합니다.
+              </p>
+              <p class="mt-6 font-script text-2xl text-brand-900">Hyunwoo Kang</p>
+            </div>
+
+            <a href="#contact" class="flex items-center justify-between rounded-full bg-brand-900 px-6 py-4 text-white transition hover:bg-brand-800">
+              <span class="font-semibold">상담 문의하기</span>
+              <span class="grid h-9 w-9 place-items-center rounded-full border border-white/40">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section id="contact" class="mx-auto max-w-6xl px-6 py-12">
+      <div class="rounded-3xl bg-brand-900 px-6 py-12 text-center text-white sm:px-10 sm:py-16">
+        <h2 class="text-3xl font-bold sm:text-4xl">기술을 사업으로 잇는 첫 단계, 함께 설계해요</h2>
+        <p class="mx-auto mt-4 max-w-2xl text-sky-200">
+          기업의 기술 자산에 맞는 사업화 전략과 R&D 로드맵을 함께 설계해 드립니다. 부담 없이 문의해 주세요.
+        </p>
+        <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <a href="mailto:contact@example.com" class="w-full rounded-full bg-white px-7 py-4 font-semibold text-brand-900 transition hover:bg-sky-100 sm:w-auto">✉️ contact@example.com</a>
+          <a href="tel:01000000000" class="w-full rounded-full border border-white/50 px-7 py-4 font-semibold text-white transition hover:bg-white/10 sm:w-auto">📞 010-0000-0000</a>
+        </div>
+        <p class="mt-6 text-sm text-sky-200/80">강현우 기술경영 컨설턴트 · 기술 사업화 / R&D 전략 전문</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="mx-auto max-w-6xl px-6 py-10 text-center text-sm text-gray-400">
+    © 2026 강현우 기술경영. All rights reserved.
+  </footer>
+
+  <!-- Custom JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>

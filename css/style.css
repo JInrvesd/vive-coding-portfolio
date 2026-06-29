@@ -1,0 +1,68 @@
+/* ============================================================
+   Custom styles — Tailwind CDN가 처리하지 못하는 부분 보완
+   ============================================================ */
+
+/* 부드러운 앵커 스크롤 + sticky 헤더 높이만큼 여백 확보 */
+html {
+  scroll-behavior: smooth;
+}
+
+[id] {
+  scroll-margin-top: 90px;
+}
+
+/* 헤더가 스크롤되면 추가되는 그림자 (main.js에서 토글) */
+#site-header.is-scrolled {
+  box-shadow: 0 4px 20px -8px rgba(11, 37, 69, 0.25);
+}
+
+/* 모바일 메뉴 열림 애니메이션 */
+#mobile-menu {
+  animation: dropdown 0.18s ease-out;
+}
+
+@keyframes dropdown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 터치 디바이스에서 탭 시 파란 하이라이트 제거 */
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 터치 타겟 최소 크기 보장 (접근성 권장 44px) */
+@media (hover: none) and (pointer: coarse) {
+  button,
+  a[role="button"],
+  .btn {
+    min-height: 48px;
+  }
+}
+
+/* 입력 필드 에러 상태 */
+.input-error {
+  border-color: #ef4444 !important;
+}
+
+.input-error:focus {
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.25) !important;
+}
+
+/* 모션 최소화 선호 사용자 배려 */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
